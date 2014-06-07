@@ -4,21 +4,30 @@
 var button = document.getElementById('getAnswer');
 
 button.onclick = function checkInput () {
-  var integerCheck = document.getElementById('userInput').value;
-  if (isNaN(userInput) || userInput <= 0) {
+  var integerCheck = document.getElementById('userInput');
+  if (isNaN(integerCheck.value) || integerCheck.value <= 0) {
     alert("Must input positive numbers.");
-    return false;
+    return ;
+  } else {
+    calcFactorial();      
   }
+    
 }
 
-
 //SET UP FUNCTION TO CALCULATE FACTORIAL
-// function() {
-//   var factorial = document.getElementById('userInput')
-//   for (factorial=factorial; factorial > 0; factorial--);
-//   factorial = userInput * userInput-1 * ...
-// }
+function calcFactorial() {
+  var factorial = document.getElementById('userInput');
+  // 5*4=20
+  // 20*3=60
+  // 60*2=120
+  var reps = (factorial.value-1);
+  var newTotal = (factorial.value * reps);
+    for (reps = factorial.value-1; reps > 2; reps--) {   
+      newTotal = newTotal * reps;
+       console.log("newTotal inside for loop " + newTotal);
+    }
+    console.log(newTotal);
+  //RETURN FACTORIAL
+  //return factorial;
 
-
-//RETURN FACTORIAL
-
+}
