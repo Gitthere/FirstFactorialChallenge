@@ -5,13 +5,12 @@ var button = document.getElementById('getAnswer');
 
 button.onclick = function checkInput () {
   var integerCheck = document.getElementById('userInput');
+  //check if value Not a Number or negative
   if (isNaN(integerCheck.value) || integerCheck.value <= 0) {
     alert("Must input positive numbers.");
-    return ;
   } else {
     calcFactorial();      
-  }
-    
+  }    
 }
 
 //SET UP FUNCTION TO CALCULATE FACTORIAL
@@ -23,11 +22,12 @@ function calcFactorial() {
   var reps = (factorial.value-1);
   var newTotal = (factorial.value * reps);
     for (reps = factorial.value-1; reps > 2; reps--) {   
-      newTotal = newTotal * reps;
-       console.log("newTotal inside for loop " + newTotal);
+      newTotal = newTotal * (reps-1);
+       //console.log("newTotal inside for loop " + newTotal);
     }
-    console.log(newTotal);
+    //console.log(newTotal);
+
   //RETURN FACTORIAL
-  //return factorial;
+  alert(newTotal);
 
 }
